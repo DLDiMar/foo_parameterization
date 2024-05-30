@@ -10,7 +10,7 @@ def log_result(shape, param1_name, param1_value, param2_name="", param2_value=""
         os.makedirs(output_dir)
 
     # Create the filename
-    filename = os.path.join(output_dir, f"{getpass.getuser()}-foo_parameterization_results-{datetime.now().strftime('%Y-%m-%d %Y-%m-%d %H-%M-%S')}.csv")
+    filename = os.path.join(output_dir, f"{getpass.getuser()}-_results-{datetime.now().strftime('%Y-%m-%d %Y-%m-%d')}.csv")
     file_exists = os.path.isfile(filename)
     
     # Define the field names for the CSV file

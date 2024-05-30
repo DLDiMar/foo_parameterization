@@ -12,14 +12,13 @@ class InputModel:
         self.param3_name = ""
         self.param3_value = ""
 
-    def sphere_input(self):
+    def sphere_input(self, radius, precision):
         """
-        Get user input for the sphere parameters.
+        Set user input for the sphere parameters.
         """
         try:
             self.param1_name = "radius"
-            self.param1_value = float(input("Enter the radius of the sphere: "))
-            self.precision = int(input("Enter the decimal precision for the volume: "))
+            self.param1_value = float(radius)
+            self.precision = int(precision)
         except ValueError as e:
-            print(f"Error: {e}")
-            raise
+            raise ValueError(f"Error: {e}")

@@ -8,15 +8,18 @@ def main():
     Outputs the value on the console and a running csv file.
     """
     try:
+        radius = input("Enter the radius of the sphere: ")
+        precision = input("Enter the decimal precision for the volume: ")
+        
         input_model = InputModel()
-        input_model.sphere_input()
+        input_model.sphere_input(radius, precision)
 
-        input_model.param1_name = "radius"
         sphere = SphereModel(input_model.param1_value)
         volume = sphere.calculate()
         print(f"The volume of the sphere with radius {input_model.param1_value} is {volume:.{input_model.precision}f}")
+        
         # Output to csv
-        try: 
+        try:
             csv_output = log_result("sphere", input_model.param1_name, input_model.param1_value, volume_output=volume)
             print(f"Result added to csv file: {csv_output}")
         except TypeError as te:
