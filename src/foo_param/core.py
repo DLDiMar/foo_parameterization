@@ -16,7 +16,11 @@ def main():
         volume = sphere.calculate()
         print(f"The volume of the sphere with radius {input_model.param1_value} is {volume:.{input_model.precision}f}")
         # Output to csv
-        log_result("sphere", input_model.param1_name, input_model.param1_value, volume_output=volume)
+        try: 
+            csv_output = log_result("sphere", input_model.param1_name, input_model.param1_value, volume_output=volume)
+            print(f"Result added to csv file: {csv_output}")
+        except TypeError as te:
+            print(f"Error: {te}")
     except ValueError as e:
         print(f"Error: {e}")
 
