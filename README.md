@@ -25,8 +25,8 @@ The Foo Parameterization Tool is a Python package designed to calculate the volu
 1. **Clone the Repository**
 
     ```sh
-    git clone https://github.com/your-username/foo_param.git
-    cd foo_param
+    git clone https://github.com/DLDiMar/foo_parameterization.git
+    cd foo_parameterization
     ```
 
 2. **Create a Virtual Environment**

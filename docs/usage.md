@@ -4,19 +4,57 @@
 
 The Foo Parameterization Tool is a versatile software package designed to calculate the volume of a sphere using the Foo et al. parameterization method. This guide will walk you through using both the command-line interface (CLI) and the graphical user interface (GUI) to perform calculations and visualize results.
 
+## Initial Install
+
+1. **Clone the Repository**
+
+    ```sh
+    git clone https://github.com/DLDiMar/foo_parameterization.git
+    cd foo_parameterization
+    ```
+
+2. **Create a Virtual Environment**
+
+    ```sh
+    python -m venv venv
+    ```
+
+3. **Activate the Virtual Environment**
+
+    - **On Windows:**
+
+        ```sh
+        venv\Scripts\activate
+        ```
+
+    - **On macOS and Linux:**
+
+        ```sh
+        source venv/bin/activate
+        ```
+
+4. **Install the Dependencies**
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+You are ready to use either the CLI or GUI. See below for using each.
+
 ## Command-Line Interface (CLI)
 
 ### Running the CLI
 
-To run the CLI, navigate to the `src/foo_param` directory and execute `core.py`
+To run the CLI, navigate to the root directory ('foo_parameterization') and run the following command: 
 
 ```sh
-python src/foo_param/core.py
+foo_et_al_param
 ```
 
 ### Example
 ```sh
-$ python .\src\foo_param\core.py
+$ foo_et_al_param
+Foo et al. Parameterization tool
 Enter the radius of the sphere: 3
 Enter the decimal precision for the volume: 3
 The volume of the sphere with radius 3.0 is 113.097
@@ -31,12 +69,13 @@ Each calculation performed via the CLI is logged to a CSV file in the csv_output
 
 ### Running the GUI
 
-To run the GUI, navigate to the src/foo_param directory and execute gui.py.
+To run the GUI, navigate to the root directory ('foo_parameterization') and run the following command:
 
 ```sh
-python src/foo_param/gui.py
+foo_et_al_param_gui
 ```
-This will open a window where you can input the radius and visualize the resulting sphere's cross-section.
+
+This will open a window where you can input the radius and determine the volume.
 
 ### Using the GUI
 
