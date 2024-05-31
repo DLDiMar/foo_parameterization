@@ -55,4 +55,4 @@ The Foo Parameterization Tool is a Python package designed to calculate the volu
 
 ## Usage
 
-See the `usage.md` file for details on using the CLI or UI tools.
+See `usage.md` for details on using the CLI or UI tools.

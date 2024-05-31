@@ -5,12 +5,12 @@ class InputModel:
 
     def __init__(self):
         self.precision = None
-        self.param1_name = ""
-        self.param1_value = ""
-        self.param2_name = ""
-        self.param2_value = ""
-        self.param3_name = ""
-        self.param3_value = ""
+        self.param1_name = None
+        self.param1_value = None
+        self.param2_name = None
+        self.param2_value = None
+        self.param3_name = None
+        self.param3_value = None
 
     def sphere_input(self, radius, precision):
         """

@@ -1,10 +1,10 @@
 import tkinter as tk
-from gui.shape_app import ShapeApp
+from foo_param.gui.shape_app import ShapeApp
 
-def main():
+def gui_main():
     root = tk.Tk()
     app = ShapeApp(root)
     root.mainloop()
 
 if __name__ == "__main__":
-    main()
+    gui_main()

@@ -11,6 +11,7 @@ The Foo Parameterization Tool is a Python package designed to calculate the volu
 - Graphical user interface for user-friendly input and visualization.
 - Visualization of the sphere's cross-section.
 - Logging of results to a CSV file.
+- Can utilize as a Python library for integration with other projects.
 
 ## Installation
 
@@ -59,13 +60,7 @@ The Foo Parameterization Tool is a Python package designed to calculate the volu
 To calculate the volume of a sphere using the CLI, run the following command:
 
 ```sh
-python src/foo_param/core.py <radius>
-```
-
-Replace `<radius>` with the radius of the sphere you want to calculate the volume for. For example, at the base level of this project:
-
-```sh
-python src/foo_param/core.py
+foo_et_al_param
 ```
 
 ### Graphical User Interface (GUI)
@@ -73,10 +68,33 @@ python src/foo_param/core.py
 To use the GUI, run the following command at the base level of this project:
 
 ```sh
-python src/foo_param/gui.py
+foo_et_al_param_gui
 ```
 
 This will open a window where you can input the radius and visualize the resulting sphere's cross-section.
+
+## Using as a Python Library
+
+You can also use the Foo et al. Parameterization Tool as a Python library in your own projects. Here is an example of how to use it:
+
+```python
+from foo_param.models.input_model import InputModel
+from foo_param.models.sphere_model import SphereModel
+from foo_param.utils.csv_logger import log_result
+
+# Create an input model and set parameters
+input_model = InputModel()
+input_model.sphere_input(radius=5, precision=2)
+
+# Create a sphere model with the input parameters and calculate the volume
+sphere_model = SphereModel(input_model.param1_value)
+volume = sphere_model.calculate()
+print(f"The volume of the sphere with radius {input_model.param1_value} is {volume:.{input_model.precision}f}")
+
+# Log the result to a CSV file
+csv_output = log_result("sphere", input_model.param1_name, input_model.param1_value, volume_output=volume)
+print(f"Result added to CSV file: {csv_output}")
+```
 
 ## Documentation
 

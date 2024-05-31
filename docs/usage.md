@@ -8,13 +8,7 @@ The Foo Parameterization Tool is a versatile software package designed to calcul
 
 ### Running the CLI
 
-To run the CLI, navigate to the `src/foo_param` directory and execute `core.py` with the desired radius as an argument.
-
-```sh
-python src/foo_param/core.py <radius>
-```
-
-Replace `<radius>` with the radius of the sphere you want to calculate the volume for. For example, at the base level of this project:
+To run the CLI, navigate to the `src/foo_param` directory and execute `core.py`
 
 ```sh
 python src/foo_param/core.py
@@ -28,10 +22,6 @@ Enter the decimal precision for the volume: 3
 The volume of the sphere with radius 3.0 is 113.097
 Result added to csv file: csv_outputs\user-_results-2024-05-30 2024-05-30.csv
 ```
-
-### Optional Parameters
-
-You can also specify optional parameters such as param2 and param3. The script will prompt you for these values if they are needed.
 
 ### Logging Results
 

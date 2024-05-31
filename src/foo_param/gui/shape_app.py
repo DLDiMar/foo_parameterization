@@ -1,26 +1,35 @@
 import tkinter as tk
 from tkinter import messagebox
-from models.sphere_model import SphereModel
-from models.input_model import InputModel
-from utils.csv_logger import log_result  
+from foo_param.models.sphere_model import SphereModel
+from foo_param.models.input_model import InputModel
+from foo_param.utils.csv_logger import log_result
 
 # Padding sizes
 PADDING_SMALL = 2
 PADDING_MED = 5
 PADDING_LARGE = 10
+WINDOW_SIZE = "300x300"
 
 # Shape class to instantiate model calculations
 class ShapeApp:
+    """
+    GUI application class for calculating sphere volumes.
+    Initializes the main window, input models, and widgets.
+    """
     def __init__(self, root):
         self.root = root
-        self.root.title("Foo Parameterization Tool")
-        self.root.geometry("300x300") 
+        self.root.title("Foo et al. Parameterization Tool")
+        self.root.geometry(WINDOW_SIZE)
 
         # Initialize the input model
-        self.input_model = InputModel()  
+        self.input_model = InputModel()
         self.create_widgets()
 
     def create_widgets(self):
+        """
+        Creates and packs all the widgets in the main window.
+        This includes input fields for sphere parameters and buttons for calculations.
+        """
         # Sphere Section
         self.sphere_frame = tk.LabelFrame(self.root, text="Sphere Parameters", padx=PADDING_MED, pady=PADDING_MED)
         self.sphere_frame.pack(side=tk.LEFT, padx=PADDING_MED, pady=PADDING_MED, fill="both", expand=True)
@@ -33,7 +42,7 @@ class ShapeApp:
         self.precision_entry = tk.Entry(self.sphere_frame)
         self.precision_entry.pack(pady=PADDING_MED, padx=PADDING_MED)
 
-        tk.Button(self.sphere_frame, text="Calculate Volume", command=self.calculate_sphere_volume).pack(pady=PADDING_SMALL, padx=PADDING_SMALL)  
+        tk.Button(self.sphere_frame, text="Calculate Volume", command=self.calculate_sphere_volume).pack(pady=PADDING_SMALL, padx=PADDING_SMALL)
 
         self.volume_label = tk.Label(self.sphere_frame, text="")
         self.volume_label.pack(pady=PADDING_MED, padx=PADDING_MED)
@@ -42,6 +51,10 @@ class ShapeApp:
         self.success_label.pack(pady=PADDING_MED, padx=PADDING_MED)
 
     def calculate_sphere_volume(self):
+        """
+        Calculates the volume of the sphere using the provided radius and precision.
+        Validates the inputs, updates the volume label, and logs the result to a CSV file.
+        """
         radius_str = self.radius_entry.get()
         precision_str = self.precision_entry.get()
         if not radius_str or not precision_str:
@@ -49,8 +62,7 @@ class ShapeApp:
             return
 
         try:
-            self.input_model.sphere_input(radius_str, precision_str)  
-
+            self.input_model.sphere_input(radius_str, precision_str)
             sphere_model = SphereModel(self.input_model.param1_value)
             volume = sphere_model.calculate()
             self.volume_label.config(text=f"Volume of the sphere: {volume:.{self.input_model.precision}f}")

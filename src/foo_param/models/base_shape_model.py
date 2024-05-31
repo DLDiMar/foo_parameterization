@@ -1,8 +1,7 @@
 class BaseModel:
     """
-    BaseModel is an abstract class that defines the structure for different
-    parameterization models. It provides methods to validate inputs and
-    calculate the desired parameter, which should be implemented by subclasses.
+    Abstract class that defines the structure for different parameterization models. 
+    Contains methods to validate inputs implemented by subclasses.
     """
 
     def __init__(self):
@@ -10,14 +9,16 @@ class BaseModel:
 
     def validate_positive_number(self, value, name="value"):
         """
-        Validate that a given value is a positive number.
+        Validate a given value is a positive number (float or int).
 
         Args:
-            value (float): The value to validate.
+            value (float or int): The value to validate.
             name (str): The name of the value for error messaging.
 
         Raises:
-            ValueError: If the value is not a positive number.
+            ValueError: If the value is not a positive number or not a float/int.
         """
+        if not isinstance(value, (int, float)):
+            raise ValueError(f"{name.capitalize()} must be a number.")
         if value <= 0:
             raise ValueError(f"{name.capitalize()} must be a positive number.")
