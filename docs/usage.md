@@ -45,11 +45,18 @@ You are ready to use either the CLI or GUI. See below for using each.
 
 ### Running the CLI
 
-To run the CLI, navigate to the root directory ('foo_parameterization') and run the following command: 
+To run the CLI, navigate to the root directory ('foo_parameterization') and run the following command**: 
 
 ```sh
 foo_et_al_param
 ```
+
+** If the command doesn't work, please use the following set of commands:
+```sh
+cd src/foo_param
+python core.py
+```
+Or if using Python3, use `python3 core.py`
 
 ### Example
 ```sh
@@ -69,11 +76,18 @@ Each calculation performed via the CLI is logged to a CSV file in the csv_output
 
 ### Running the GUI
 
-To run the GUI, navigate to the root directory ('foo_parameterization') and run the following command:
+To run the GUI, navigate to the root directory ('foo_parameterization') and run the following command**:
 
 ```sh
 foo_et_al_param_gui
 ```
+
+** If the command doesn't work, please use the following set of commands:
+```sh
+cd src/foo_param
+python run_gui.py
+```
+Or if using Python3, use `python3 run_gui.py`
 
 This will open a window where you can input the radius and determine the volume.
 
