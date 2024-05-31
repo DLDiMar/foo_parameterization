@@ -20,7 +20,7 @@ Ensure you have the following software installed on your development machine:
 
     ```sh
     git clone https://github.com/your-username/foo_param.git
-    cd foo_param
+    cd foo_parameterization
     ```
 
 2. **Create a Virtual Environment**

@@ -49,10 +49,10 @@ The Foo Parameterization Tool is a Python package designed to calculate the volu
         source venv/bin/activate
         ```
 
-4. **Install the Dependencies**
+4. **Install the Dependencies and Foo et al. Program**
 
     ```sh
-    pip install -r requirements.txt
+    pip install .
     ```
 
 ### Command-Line Interface

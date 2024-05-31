@@ -33,7 +33,7 @@ The Foo Parameterization Tool is a versatile software package designed to calcul
         source venv/bin/activate
         ```
 
-4. **Install the Dependencies**
+4. **Install the Dependencies and Foo et al. Program**
 
     ```sh
     pip install -r requirements.txt
